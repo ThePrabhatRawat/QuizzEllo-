@@ -1,49 +1,254 @@
+/* src/App.css */
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 35vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 80vh;
+  background-color: #000; /* Black background */
+  color: #ffffff;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.App-header {
+  padding: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.App-header h1 {
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.App-header h1 .mcq {
+  color: #e94560; /* Red color */
+  transition: all 0.3s ease;
+}
+
+.App-header h1 .game {
+  color: #6a0572; /* Purple color */
+  transition: all 0.3s ease;
+}
+
+.App-header h1:hover .mcq {
+  transform: scale(1.1);
+  border-bottom: 2px solid #6a0572; /* Purple border */
+}
+
+.App-header h1:hover .game {
+  transform: scale(1.1);
+  border-bottom: 2px solid #e94560; /* Red border */
+}
+
+.home {
+  margin: 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.home h2 {
+  margin-bottom: 20px;
+  color: #e94560; /* Red color */
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.home p {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.start-button {
+  margin-top: 20px;
+  background-color: transparent; /* Transparent background */
+  border: 2px solid #e94560; /* Red border */
   color: white;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1.4s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.start-button:hover {
+  background-color: #e94560; /* Red background on hover */
+  border-image: linear-gradient(to right, #6a0572, #e94560) 1; /* Gradient border on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+footer {
+  margin-top: 40px;
+  animation: fadeInUp 1.6s ease-in-out;
 }
 
-.images {
+footer p {
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  color: #e94560; /* Red color */
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+  color: #6a0572; /* Purple color on hover */
+}
+
+/* Quiz Component Styles */
+.quiz {
+  margin: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.question-count {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  color: #e94560; /* Red color */
+}
+
+.question-section {
+  margin-bottom: 40px; /* Increased space between question and answers */
+}
+
+.question-section h2 {
+  margin-bottom: 20px; /* Space between question text and options */
+}
+
+.answer-section .btn {
+  margin: 5px;
+  background-color: transparent; /* Transparent background */
+  border: 2px solid #e94560; /* Red border */
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.answer-section .btn:hover {
+  background-color: #e94560; /* Red background on hover */
+  border-image: linear-gradient(to right, #6a0572, #e94560) 1; /* Gradient border on hover */
+}
+
+.score-section {
+  margin-top: 40px; /* Increased space at the top of the score section */
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.btn-secondary {
+  background-color: transparent; /* Transparent background */
+  border: 2px solid #6a0572; /* Purple border */
+  color: #fff;
+  margin-top: 20px; /* Space between score and back button */
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #6a0572;
+  border: 2px solid white;  /* Purple background on hover */
+  border-image: linear-gradient(to right, #e94560, #6a0572) 1; /* Gradient border on hover */
+}
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.home-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+  margin-top: 20px;
 }
-.images img {
-  min-width: 100px;
-  height: auto;
-  margin: 5px;
+
+.rules-section, .humor-section {
+  flex: 1 1 45%;
+  background-color: #1a1a2e; /* Dark purple background */
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+.rules-section h3, .humor-section h3 {
+  margin-bottom: 20px;
+  color: #e94560; /* Red color */
+}
+
+.rules-section ul, .humor-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.rules-section li, .humor-section li {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.rules-section:hover, .humor-section:hover {
+  background-color: #2a2a4e; /* Slightly lighter dark purple on hover */
+  border: 2px solid white; 
+}
+.game-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.game-title .mcq {
+  color: #e94560; /* Red color */
+  transition: all 0.3s ease;
+}
+
+.game-title .game {
+  color: #6a0572; /* Purple color */
+  transition: all 0.3s ease;
+}
+
+.game-title:hover .mcq, .game-title:hover .game {
+  transform: scale(1.1);
+  border-bottom: 2px solid #6a0572; /* Purple border */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+  .rules-section, .humor-section {
+    flex: 1 1 100%;
+    margin: 10px 0;
+  }
+
+  .home h2 {
+    font-size: 1.5em;
+  }
+
+  .home p {
+    font-size: 1em;
+  }
+
+  .start-button {
+    width: 100%;
+  }
+
+  .social-links a {
+    display: block;
+    margin: 5px 0;
+  }
 }
